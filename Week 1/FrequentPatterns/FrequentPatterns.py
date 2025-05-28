@@ -17,3 +17,9 @@ def count_patterns(text: str, k: int) -> list:
     frequent_patterns = [p for p, c in pattern_counts.items() if c == max_count]
 
     return frequent_patterns
+
+with open('dataset_30272_13.txt', 'r') as file:
+    text = file.read()
+k = 11
+
+print(count_patterns(text, k))
