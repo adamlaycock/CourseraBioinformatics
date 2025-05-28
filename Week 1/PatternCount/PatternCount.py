@@ -18,4 +18,4 @@ with open('dataset_30272_6.txt', 'r') as file:
     text = file.read()
 pattern = 'CAGCTAACA'
 
-print(count_patterns(text, pattern))
+print(count_pattern(text, pattern))
