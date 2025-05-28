@@ -1,4 +1,4 @@
-def PatternCount(text: str, pattern: str) -> float:
+def count_patterns(text: str, pattern: str) -> float:
     """_summary_
 
     Args:
@@ -13,3 +13,9 @@ def PatternCount(text: str, pattern: str) -> float:
         if text[i:i + len(pattern)] == pattern:
             count += 1
     return count
+
+with open('dataset_30272_6.txt', 'r') as file:
+    text = file.read()
+pattern = 'CAGCTAACA'
+
+print(count_patterns(text, pattern))
