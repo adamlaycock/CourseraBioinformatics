@@ -1,4 +1,4 @@
-def count_patterns(text: str, pattern: str) -> float:
+def count_pattern(text: str, pattern: str) -> float:
     """_summary_
 
     Args:
