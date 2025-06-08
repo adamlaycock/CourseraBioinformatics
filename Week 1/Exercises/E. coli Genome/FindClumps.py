@@ -16,7 +16,6 @@ def FindClumps(text: str, k: int, L: int, t: int):
     clumps = set()
     kmer_counts = defaultdict(int)
 
-    # First window
     for i in range(L - k + 1):
         kmer = text[i:i+k]
         kmer_counts[kmer] += 1
@@ -25,16 +24,13 @@ def FindClumps(text: str, k: int, L: int, t: int):
         if count >= t:
             clumps.add(kmer)
 
-    # Slide the window
     for i in range(1, n - L + 1):
-        # Remove k-mer that slides out
         first_kmer = text[i-1:i-1+k]
         kmer_counts[first_kmer] -= 1
 
-        # Add new k-mer that comes in
         new_kmer = text[i + L - k:i + L]
         kmer_counts[new_kmer] += 1
-
+        
         if kmer_counts[new_kmer] >= t:
             clumps.add(new_kmer)
 
