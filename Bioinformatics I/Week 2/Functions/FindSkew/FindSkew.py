@@ -25,4 +25,4 @@ def find_skew(
 
 sequence = 'GAGCCACCGCGATA'
 
-print(*find_patterns(sequence))
+print(*find_skew(sequence))
